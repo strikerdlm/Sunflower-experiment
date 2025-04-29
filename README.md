@@ -1,19 +1,85 @@
 # Sunflower Greenhouse Monitor
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
+
 **Platform:** Wio Terminal by Seeed Studio
 
-## Overview
+A comprehensive greenhouse monitoring system for sunflower growth experiments. Tracks and logs environmental conditions (CO₂, temperature, humidity, soil moisture, and ambient light) with real-time display and SD card logging.
 
-This project is a comprehensive greenhouse monitoring system built on the Wio Terminal platform. It is designed to track and log environmental conditions for sunflower growth experiments, with a focus on limited sunlight and directed blue wavelength light (less than 1000 lux). The system integrates multiple sensors and provides real-time display, statistics, and SD card logging.
+## Table of Contents
 
-## Hardware
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Hardware Requirements](#hardware-requirements)  
+- [Documentation](#documentation)  
+- [Contributing](#contributing)  
+- [Code of Conduct](#code-of-conduct)  
+- [License](#license)
 
-- **Wio Terminal** (Seeed Studio)
-- **SCD-41 Sensor** (I2C): Measures CO₂, temperature, and relative humidity.
-- **Soil Moisture Sensor** (Capacitive, v1.2): Connected to analog port (A0).
-- **Light Sensor** (Wio Terminal built-in, analog): Measures ambient light (lux).
-- **SD Card**: For data logging.
+## Installation
 
-## Features
+### Prerequisites
+
+- Git  
+- Arduino IDE (v2.0+) or PlatformIO  
+- Arduino libraries:
+  - TFT_eSPI  
+  - SparkFun_SCD4x_Arduino_Library  
+  - Seeed_Arduino_LCD  
+  - Seeed_FS  
+
+### Clone Repository
+
+```bash
+git clone https://github.com/strikerdlm/Sunflower-experiment.git
+cd Sunflower-experiment
+```
+
+## Usage
+
+### Arduino IDE
+
+1. Open `src/sunflower.ino` in the Arduino IDE.  
+2. Select **Wio Terminal** board (Tools → Board → Seeed → Wio Terminal).  
+3. Click **Upload** to flash the firmware.
+
+### PlatformIO
+
+1. Ensure `platformio.ini` is configured for Wio Terminal.  
+2. Run:
+
+```bash
+platformio run --target upload
+```
+
+## Hardware Requirements
+
+- Wio Terminal (Seeed Studio)  
+- SCD40/SCD41 CO₂, temperature, and humidity sensor  
+- Soil moisture sensor (analog A0)  
+- SD card for data logging  
+
+## Documentation
+
+See the `docs/` directory for:
+
+- Installation guide  
+- Hardware setup instructions  
+- Calibration procedures  
+- Troubleshooting guide  
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
+
+## Code of Conduct
+
+This project follows the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to abide by its terms.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 - **Live Display:** Real-time readings of CO₂, temperature, humidity, soil moisture, and light intensity on the Wio Terminal screen.
 - **Rolling Statistics:** Mean, standard deviation, min, and max for each parameter, updated live.
