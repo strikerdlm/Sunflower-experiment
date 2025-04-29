@@ -11,23 +11,7 @@
 #include <SparkFun_SCD4x_Arduino_Library.h>
 #include <Seeed_FS.h>
 #include <SD/Seeed_SD.h>
-
-/* ---------------------------  LAYOUT  --------------------------- */
-/* tweak these to move things around                                */
-const uint16_t Y_TITLE      =  0;      // headline “Greenhouse Monitor”
-const uint16_t Y_LABELS     = 40;      // start of live-value labels
-const uint16_t Y_STATS_BASE = 170;     // top of statistics table
-
-const uint16_t X_LABELS      =   0;    // left margin for labels
-const uint16_t X_VALS        =  90;    // x for main values
-const uint16_t X_SOIL_LABEL  = 160;    // x for Soil label
-const uint16_t X_SOIL_VAL    = 210;    // x for Soil value
-/* ----------------------------------------------------------------*/
-
-#define SOIL_PIN          A0
-#define LOG_INTERVAL_MS   (10UL * 60UL * 1000UL)
-#define SCREEN_INT_MS     2000UL                 // ← refresh every 2 s
-#define SCD_TIMEOUT_MS    5500UL                 // sensor delivers ~5 s
+#include "config.h"
 
 TFT_eSPI   tft;
 RTC_SAMD51 rtc;
